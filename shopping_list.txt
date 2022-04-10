@@ -3,3 +3,4 @@ jajca x 2
 leb x 3
 ocet x 4
 kafe x 5
+zejtin x 8
