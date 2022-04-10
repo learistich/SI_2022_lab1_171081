@@ -1,0 +1,86 @@
+1. git clone https://github.com/learistich/SI_2022_lab1_171081.git - со оваа команда го клонирам remote repo на local repo.
+2. cd SI_2022_lab1_171081 - со оваа команда го отварам проектот за да можам да продолжам со работа на него 
+3. touch shopping_list.txt - со оваа команда креирам текстуална датотека со името shopping_list.
+4. nano shopping_list.txt - со оваа команда влегувам во текстуалната датотека и во неа ги пишувам петте производи.
+5. git add shopping_list.txt - со оваа команда овозможувам текстуалната датотека од untracked да биде stage.
+6. git commit -m "Add 5 items to the shopping list"
+[master ff4286e] Add 5 items to the shopping list
+ 1 file changed, 5 insertions(+)
+ create mode 100644 shopping_list.txt
+Со оваа команда датотеката станува unmodify.
+7. nano shopping_list.txt - со оваа команда повторно влегувам во датотеката shopping_list.txt и таму додавам количини за секој од производите
+8. git commit -a -m "Add quantities to the items."
+[master 1347913] Add quantities to the items.
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+Со оваа команда ги зачувувам сите промени кои што ги имам направено во датотеката shopping_list и со самото тоа оваа датотека станува modify.
+9. git branch branch1 - креирам нова гранка со името branch1
+10. git branch branch2 - креирам нова гранка со името branch2
+11. git branch
+  branch1
+  branch2
+* master
+Со оваа команда проверив дали успешно се ми креирани гранките.
+12. git pull - за успешна синхронизација потребно е секогаш пред push да направиме pull за да бидеме сигурни дека во меѓувреме нема направено некој промени на remote repo и дека нема да настане конфликт доколку направиме push.
+13. git push origin master - додаваме се на remote repo што се наоѓа на гранката master
+14. git push origin branch1 - на remote repo ја додаваме и гранката branch1
+15. git push origin branch2 - на remote repo ја додаваме и гранката branch2
+16. git checkout branch1 - со оваа команда се префрлив на гранката branch1
+17. nano shopping_list.txt - повторно ја отварам текстуалната датотека за да ја сменам количината на петиот производ, каде воедно и ја менувам.
+18. git commit -a -m "Change quantity of item #5” - ги зачувувам промените во датотеката.
+19. git checkout master - со командата повторно се префрлам на гранката master.
+20. nano shopping_list.txt - ја отворив текстуалната датотека и ја променив количината на вториот производ.
+21. git commit -a -m "Change quantity of item #2” - ги зачував промените на текстуалната датотека на local repo.
+22. git pull
+23. git push origin master - ги прикачувам сите нови промени master гранката на master на оддалечениот репозиториум.
+24. git push origin branch1 - ги прикачувам сите промени на branch1 гранката на оддалечениот репозиториум.
+25. git push origin branch2
+Everything up-to-date
+26. git checkout branch2 - со оваа команда се префрлив на гранката branch2. 
+27. nano shopping_list.txt - влегов во текстуалната датотека и го променив името на четвртиот производ
+28.  git commit -a -m "Modify item #4” - ги зачував промените во текстуалната датотека 
+29. nano shopping_list.txt - откако влегов повторно во тексуалната датотека додадов и шести производ.
+30. Git commit -a -m "Modify item #4 and add item #6” - промените во датотеката се зачувани.
+31. git checkout master - се префрлив на гранката master
+32.git merge branch1 - Прво се отвори прозореc каде што морав да напишам порака која се однесува за спојувањето на гранките одкако заврши тоа кликнав :wq и ми се испечати следната порака.
+Auto-merging shopping_list.txt
+Merge made by the 'recursive' strategy.
+ shopping_list.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+33. git merge branch2
+Auto-merging shopping_list.txt
+CONFLICT (content): Merge conflict in shopping_list.txt
+Automatic merge failed; fix conflicts and then commit the result.
+При спојување на гранката branch2 кон master се јави конфликт 
+34. git diff         
+diff --cc shopping_list.txt
+index 87ee096,93c93a8..0000000
+--- a/shopping_list.txt
++++ b/shopping_list.txt
+@@@ -1,5 -1,6 +1,11 @@@
+  mleko x 1
+ -jajca x 2
+ +jajca x 7
+  leb x 3
+++<<<<<<< HEAD
+ +seker x 4
+ +kafe x 6
+++=======
++ ocet x 4
++ kafe x 5
++ zejtin x 8
+++>>>>>>> branch2
+Со оваа команда ги гледам разликите кои го прават конфликтот
+35. git config merge.tool vimdiff
+36. vim shopping_list.txt - овде ги споив и двете промени за да се реши конфликтот
+37. git add .
+38. git commit -m "fixed merge conflict"
+
+
+
+
+
+
+
+
+
+
