@@ -3,3 +3,6 @@ jajca x 7
 leb x 3
 seker x 4
 kafe x 6
+ocet x 4
+kafe x 5
+zejtin x 8
