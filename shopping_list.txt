@@ -1,5 +1,5 @@
-mleko
-jajca
-leb
-seker
-kafe
+mleko x 1
+jajca x 2
+leb x 3
+seker x 4
+kafe x 5
