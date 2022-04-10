@@ -2,4 +2,4 @@ mleko x 1
 jajca x 7
 leb x 3
 seker x 4
-kafe x 5
+kafe x 6
